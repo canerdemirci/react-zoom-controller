@@ -1,10 +1,11 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), dts({rollupTypes: true, tsconfigPath: './tsconfig.app.json'})],
   build: {
     lib: {
       entry: resolve(__dirname, './index.ts'),
@@ -19,6 +20,6 @@ export default defineConfig({
           'react-dom': 'ReactDOM'
         }
       }
-    }
-  }
+    },
+  },
 })
