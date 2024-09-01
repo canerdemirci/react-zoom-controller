@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoContainer {
+    flex: 4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #eee;
+}
+    .logoContainer h1 {
+        position: absolute;
+        top: 50px;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 2.5rem;
+    }
+
+.controllersSection {
+    flex: 2;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+}

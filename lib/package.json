@@ -1,0 +1,25 @@
+{
+    "name": "react-zoom-controller",
+    "version": "1.0.0",
+    "description": "Customizable React Zoom Controller (Typescript)",
+    "type": "module",
+    "author": "Caner Demirci <caner.demirci@outlook.com>",
+    "license": "MIT",
+    "keywords": [
+        "react",
+        "component",
+        "zoom controller"
+    ],
+    "repository": "canerdemirci/react-zoom-controller",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/index.umd.cjs",
+    "module": "./dist/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.umd.cjs"
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.main {
+    position: relative;
+    font-size: .8rem;
+    cursor: pointer;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+}
+    .main:hover {
+        filter: brightness(110%);
+    }
+
+.input {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: .5rem 1rem .5rem .2rem;
+    text-align: center;
+    width: 3rem;
+    font-weight: bold;
+}
+    .input:active {
+        background-color: #606060;
+    }
+
+.cursor {
+    position: absolute;
+    top: 8px;
+    right: 17px;
+    height: 15px;
+    width: 3px;
+    background-color: #000;
+    animation: cursorAnim 300ms infinite;
+}
+
+.triangle {
+    position: absolute;
+    top: 13px;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid #424242;
+}
+
+.optionContainer {
+    display: none;
+    overflow-y: auto;
+    max-height: 200px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+}
+
+.option {
+    padding: .5rem;
+    background-color: #404040;
+    color: #fff;
+    font-size: .8rem;
+}
+    .option:hover {
+        filter: brightness(50%);
+    }
+
+@keyframes cursorAnim {
+    from {
+        background-color: #fb9898;
+    }
+    to {
+        background-color: #fff;
+    }
+}
