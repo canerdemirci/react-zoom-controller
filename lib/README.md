@@ -15,7 +15,7 @@
 ## Install
 
 ```bash
-npm install --save cnr-react-pagination
+npm install --save react-zoom-controller
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install --save cnr-react-pagination
 ```tsx
 import React, { Component } from 'react'
 
-import Pagination from 'react-zoom-controller'
+import ZoomController from 'react-zoom-controller'
 
 class Example extends Component {
   render() {
