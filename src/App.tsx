@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-//import ZoomController from 'react-zoom-controller'
-import ZoomController from '../lib/components'
+import ZoomController from 'react-zoom-controller'
+//import ZoomController from '../lib/components'
 import logo from './assets/logo.png'
 
 function App() {
