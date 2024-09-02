@@ -13,8 +13,7 @@ export default function ZoomController({
     sliderWidth,
     sliderStyle,
     selectBoxStyle,
-    onChange
-} : IZoomController) {
+    onChange }: IZoomController) {
     const [sliderValue, setSliderValue] = useState<number>(value)
     const [selectBoxValue, setSelectBoxValue] = useState<number>(value)
 
@@ -26,12 +25,12 @@ export default function ZoomController({
 
     function handleSelectBoxOnChange(value: number) {
         setSelectBoxValue(value)
-        setSliderValue(value >= 100 ? 100 : value)
+        setSliderValue(Math.min(value, 100))
         onChange(value)
     }
-    
+
     return (
-        <div className={styles.mainContainer + ' ' + styles.normalize}>
+        <div className={`${styles.mainContainer} ${styles.normalize}`}>
             <Slider
                 value={sliderValue}
                 toolTipVisibility={toolTipVisibility}

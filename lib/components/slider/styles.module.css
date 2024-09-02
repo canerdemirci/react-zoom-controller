@@ -6,7 +6,7 @@
     }
 
 .tooltip {
-    z-index: 999;
+    z-index: 998;
     width: 45px;
     height: 40px;
     text-align: center;

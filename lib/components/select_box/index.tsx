@@ -2,18 +2,24 @@ import { MouseEvent, useRef, useState } from "react"
 import { ISelectBox, MenuOpeningDirection } from "./index.types"
 import styles from './style.module.css'
 
-export default function SelectBox({ value, options, selectBoxStyle, onChange } : ISelectBox) {
+export default function SelectBox(
+    { value, options, selectBoxStyle, onChange } : ISelectBox)
+{
+    // For using input element's select(), blur() functions
     const inputRef = useRef<HTMLInputElement>(null)
 
     const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
     const [menuOpeningDirection, setMenuOpeningDirection] = useState<MenuOpeningDirection>('down')
 
+    // When clicked outside of selectbox close options and unfocus input
     function onClickDocument() {
         setMenuIsOpen(false)
         document.removeEventListener('click', onClickDocument)
         inputRef.current?.blur()
     }
     
+    // Opens options downwards if it's not overflowing otherwise opens upwards
+    // Then focus and select input element for number entry.
     function handleSelectBoxOnClick(event: MouseEvent) {
         event.stopPropagation()
 
@@ -21,6 +27,7 @@ export default function SelectBox({ value, options, selectBoxStyle, onChange } :
         const mouseY = event.clientY;
         const difference = docHeight - mouseY;
 
+        // Options container height = 200px
         if (difference < 200) {
             setMenuOpeningDirection('up')
         } else {
@@ -32,11 +39,13 @@ export default function SelectBox({ value, options, selectBoxStyle, onChange } :
         document.addEventListener('click', onClickDocument)
     }
 
+    // The given zoom percentage can't be higher than highest number of option list.
     function handleInputOnChange(event: React.ChangeEvent<HTMLInputElement>) {
         let val = parseInt(event.target.value)
+        const maxInOptions = Math.max(...options)
         val = isNaN(val) ? 100 : val;
-        if (val > options[options.length - 1]) {
-            val = options[options.length - 1];
+        if (val > maxInOptions) {
+            val = maxInOptions;
         }
         onChange(val)
     }

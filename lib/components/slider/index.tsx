@@ -83,7 +83,7 @@ export default function Slider({
                 }}
                 className={styles.tooltip}
                 >
-                {Math.round(value)}
+                {value}
             </div>}
             {/* Slider track */}
             <div 

@@ -2,10 +2,11 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({rollupTypes: true, tsconfigPath: './tsconfig.app.json'})],
+  plugins: [react(), libInjectCss(), dts({tsconfigPath: './tsconfig.app.json'})],
   build: {
     lib: {
       entry: resolve(__dirname, './index.ts'),
