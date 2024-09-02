@@ -12,6 +12,8 @@
 - Zoom options (dropdown menu - accepts zoom value input) (optional)
 - Customizable style
 
+![cover](https://github.com/canerdemirci/react-zoom-controller/blob/main/zoomCover.png)
+
 ## Install
 
 ```bash
